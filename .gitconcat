@@ -1,0 +1,9 @@
+gitconcat:
+  stamp: 'random'
+
+javascripts:
+  input:
+    - "**.js"
+  output: 
+    - "./final_%{STAMP}.js"
+    - "./final2.js"
