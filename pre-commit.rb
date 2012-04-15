@@ -86,10 +86,18 @@ doc.each do |key,values|
     i = 1
     filters.each do |filter|
       next_temp = temp + '_' + i.to_s
-      filter = filter.gsub("%{INPUT}", temp)
-      filter = filter.gsub("%{OUTPUT}", next_temp)
-      temp = next_temp
-      i += 1
+      begin
+        filter = filter.gsub("%{input}", temp)
+        filter = filter.gsub("%{output}", next_temp)
+        `#{filter}`
+        raise 'error' unless File.exist? next_temp
+        `rm #{temp}`
+        temp = next_temp
+        i += 1
+      rescue
+        puts "Git-Concat: The following filter value defined inside :#{key} has failed #{filter}"
+        exit
+      end
     end
 
     replacements.each do |key,value|

@@ -91,6 +91,25 @@ Each time you issue a commit then the concatenation process will be executed.
 $ ./.git/hooks/pre-commit
 ```
 
+## Filters
+
+Filters can also be added to the file which will be run after the concatenation and just before the final file is created.
+
+The following example will minify the final concatenated javascript file.
+
+```yaml
+javascripts:
+  filters:
+    - jsmin %{input} > %{output}
+  input:
+    - js/**.js
+  output:
+    - final_%{digest}.js
+
+```
+
+Filters can only be defined in the concatenation area and not in the config definition block.
+
 ## Installation
 
 Git-Concat needs to be installed for each repository that will use its features, but this is very easy.
