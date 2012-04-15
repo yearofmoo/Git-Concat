@@ -6,7 +6,8 @@ This tool is very useful for simple javascript tools that require a master file 
 
 ## Requirements
 
-- Git + Ruby
+- Git
+- Ruby (Rubygems + YAML + MD5 Digest)
 
 ## Usage
 
