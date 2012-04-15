@@ -106,3 +106,7 @@ Git-Concat needs to be installed for each repository that will use its features,
 ```bash
 $ curl https://raw.github.com/matsko/Git-Concat/master/install.sh | bash
 ```
+
+## Upgrading
+
+Just remove the ./.git/hooks/pre-commit file and run the install script again.
