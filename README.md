@@ -66,6 +66,7 @@ stylesheet1:
     - stylesheets/3.css
   output:
     - master.css
+```
 
 ### Custom Variables
 
