@@ -12,6 +12,7 @@ This tool is very useful for simple javascript tools that require a master file 
 ## Usage
 
 By specifying a **.gitconcat** (or **.gitconcat.yml**) file, the files within can be outlined below.
+This file must be created within the root folder of the project where the .git folder exists.
 
 ### Basic Usage
 
