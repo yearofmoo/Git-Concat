@@ -81,7 +81,6 @@ doc.each do |key,values|
 
     temp = '._gitconcat_temp_file'
     File.open(temp, 'w') {|f| f.write(combined) }
-    replacements['digest'] = Digest::MD5.file(temp).to_s
 
     i = 1
     filters.each do |filter|
@@ -99,6 +98,8 @@ doc.each do |key,values|
         exit
       end
     end
+
+    replacements['digest'] = Digest::MD5.file(temp).to_s
 
     replacements.each do |key,value|
       file.gsub!("%{#{key}}", value)
