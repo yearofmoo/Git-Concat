@@ -7,7 +7,7 @@ This tool is very useful for simple javascript tools that require a master file 
 ## Requirements
 
 - Git
-- Ruby (Rubygems + YAML + MD5 Digest)
+- Ruby (**Rubygems + YAML + MD5 Digest**)
 
 ## Usage
 
@@ -109,4 +109,4 @@ $ curl https://raw.github.com/matsko/Git-Concat/master/install.sh | bash
 
 ## Upgrading
 
-Just remove the ./.git/hooks/pre-commit file and run the install script again.
+Just remove the **./.git/hooks/pre-commit** file and run the install script again.
