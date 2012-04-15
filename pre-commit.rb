@@ -1,15 +1,10 @@
 #!/usr/bin/env ruby
 
-# --- CUSTOM VARIABLES --- #
-
-file = './.gitconcat'
-
-
-# --- DO NOT EDIT BELOW THIS LINE --- #
-
 require 'rubygems'
 require 'yaml'
 require 'digest/md5'
+
+file = './.gitconcat'
 
 def timestamp
   Time.now.to_i.to_s
@@ -64,6 +59,8 @@ doc.each do |key,values|
   input = Array(values['input'])
   output = Array(values['output'])
 
+  filters = values.has_key?('filters') ? Array(values['filters']) : []
+
   if output.length == 0 || input.length == 0
     puts "Git-Concat: :#{key} skipped"
     next
@@ -85,6 +82,15 @@ doc.each do |key,values|
     temp = '._gitconcat_temp_file'
     File.open(temp, 'w') {|f| f.write(combined) }
     replacements['digest'] = Digest::MD5.file(temp).to_s
+
+    i = 1
+    filters.each do |filter|
+      next_temp = temp + '_' + i.to_s
+      filter = filter.gsub("%{INPUT}", temp)
+      filter = filter.gsub("%{OUTPUT}", next_temp)
+      temp = next_temp
+      i += 1
+    end
 
     replacements.each do |key,value|
       file.gsub!("%{#{key}}", value)
