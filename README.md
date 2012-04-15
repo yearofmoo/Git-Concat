@@ -95,6 +95,12 @@ $ ./.git/hooks/pre-commit
 
 Git-Concat needs to be installed for each repository that will use its features, but this is very easy.
 
+### Before Install
+
+- Make sure you have git and ruby.
+- You will need to ensure that the install script is run within a git repository.
+- You will need to remove the .git/hooks/pre-commit file (its there by default) or move it if its already being used.
+
 ### Install with:
 
 ```bash
