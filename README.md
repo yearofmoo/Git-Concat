@@ -67,7 +67,7 @@ javascripts:
     - other_%{other_variable}.js
 ```
 
-the **stamp** value will be set automatically as the current timestamp (when the script is executed) if not defined in the config block
+the **stamp** value will be set automatically as the current timestamp (when the script is executed) if not defined in the config block.
 
 ### Digest Values
 
@@ -101,7 +101,7 @@ Git-Concat needs to be installed for each repository that will use its features,
 - You will need to ensure that the install script is run within a git repository.
 - You will need to remove the .git/hooks/pre-commit file (its there by default) or move it if its already being used.
 
-### Install with:
+### Install with
 
 ```bash
 $ curl https://raw.github.com/matsko/Git-Concat/master/install.sh | bash
