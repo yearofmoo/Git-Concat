@@ -1,5 +1,24 @@
 #!/usr/bin/env ruby
 
+=begin
+
+description: Git-Concat is a small tool to concatenate files within a git repo directed by a manifest file.
+
+license: MIT License http://www.opensource.org/licenses/mit-license.php
+
+authors:
+- Matias Niemelä (matias [at] yearofmoo [dot] com)
+
+home:
+- http://www.yearofmoo.com/Git-Concat
+
+requires:
+- Git
+- Ruby (RubyGems + YAML and MD5 Hashing Support)
+- Bash
+
+=end
+
 require 'rubygems'
 require 'yaml'
 require 'digest/md5'
