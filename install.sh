@@ -3,6 +3,7 @@
 DIR="./Git-Concat"
 FILE="$DIR/pre-commit.rb"
 FINAL="./.git/hooks/pre-commit"
+CONCAT_FILE="./.gitconcat"
 
 if [ ! -d ./.git ]; then
   echo "Git-Concat: Git repo in this directory is non existant"
@@ -26,12 +27,14 @@ mv ./$FILE ./.git/hooks/pre-commit
 
 rm -fr $DIR
 
-if [ ! -f $FILE ]; then
-  echo "Git-Concat: Git pull operation failed"
+if [ ! -f $FINAL ]; then
+  echo "Git-Concat: Unable to movie pre-commit file to $DIR"
   exit 0
 fi
 
-touch "./.gitconcat"
+echo "Git-Concat: Installation successful."
 
-echo "Git-Concat installed."
-echo ".gitconcat file created"
+if [ ! -f $CONCAT_FILE ]; then
+  touch $CONCAT_FILE
+  echo "Git-Concat: .gitconcat file created."
+fi
