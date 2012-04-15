@@ -10,7 +10,9 @@ This tool is very useful for simple javascript tools that require a master file 
 
 ## Usage
 
-By specifying a **.gitconcat** (or .gitconcat.yml) file, the files within can be outlined below.
+By specifying a **.gitconcat** (or **.gitconcat.yml**) file, the files within can be outlined below.
+
+### Basic Usage
 
 Here is an example for combining javascript files:
 
@@ -23,6 +25,8 @@ master_javascript:
     - combined.js
     - another_combined_file_with_the_same_data.js
 ```
+
+### Multiple Concatenations
 
 Multiple concatenations can also be defined:
 
@@ -44,6 +48,8 @@ stylesheet2:
     - 456.css
 ```
 
+### Custom Variables
+
 Timestamp values can also be specified:
 
 ```yaml
@@ -59,9 +65,25 @@ javascripts:
     - other_%{other_variable}.js
 ```
 
+the **stamp** value will be set automatically as the current timestamp (when the script is executed) if not defined in the config block
+
+### Digest Values
+
+A digest value can be added directly to any of the output file names. The digest itself will be the md5 hash of the final concatenated file.
+
+```yaml
+javascripts:
+  input:
+    - js/**.js
+  output:
+    - final_%{digest}.js
+```
+
+### How to run the process
+
 Each time you issue a commit then the concatenation process will be executed.
 
-You may also call this manually:
+**You may also call this manually**
 
 ```bash
 $ ./.git/hooks/pre-commit
