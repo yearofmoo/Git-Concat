@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DIR="./Git-Concat"
-FILE="$DIR/pre-commit.rb"
+FILE="$DIR/script.rb"
 FINAL="./.git/hooks/pre-commit"
 CONCAT_FILE="./.gitconcat"
 

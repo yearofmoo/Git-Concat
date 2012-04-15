@@ -59,6 +59,7 @@ doc.each do |key,values|
   input = Array(values['input'])
   output = Array(values['output'])
 
+  exclude = Array(values['exclude']) ? Array(values['exclude']) : []
   filters = values.has_key?('filters') ? Array(values['filters']) : []
 
   if output.length == 0 || input.length == 0
@@ -69,6 +70,12 @@ doc.each do |key,values|
   files = []
   input.each do |i|
     files |= find_files(i)
+  end
+
+  if exclude.length > 0 && files.length > 0
+    files = files.find_all do |file|
+      true unless exclude.include?(file)
+    end
   end
 
   if files.length == 0
