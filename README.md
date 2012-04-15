@@ -4,6 +4,8 @@ Git-Concat is a simple ruby script that allows you specify a series of files tha
 
 This tool is very useful for simple javascript tools that require a master file to be always generated and up to date.
 
+A full explanation of the plugin can be found at http://yearofmoo.com/Git-Concat
+
 ## Requirements
 
 - Git
@@ -49,6 +51,21 @@ stylesheet2:
   output:
     - 456.css
 ```
+
+### Exluding files
+
+Certain files can also be excluded from the the input fields search list.
+
+```yaml
+stylesheet1:
+  exclude:
+    - master.css
+  input:
+    - stylesheets/1.css
+    - stylesheets/2.css
+    - stylesheets/3.css
+  output:
+    - master.css
 
 ### Custom Variables
 
@@ -126,6 +143,10 @@ Git-Concat needs to be installed for each repository that will use its features,
 $ curl https://raw.github.com/matsko/Git-Concat/master/install.sh | bash
 ```
 
-## Upgrading
+### Upgrading
 
 Just remove the **./.git/hooks/pre-commit** file and run the install script again.
+
+## More Info
+
+Please visit http://yearofmoo.com/Git-Concat to read more about this amazing plugin.
