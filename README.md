@@ -141,7 +141,7 @@ Git-Concat needs to be installed for each repository that will use its features,
 ### Install with
 
 ```bash
-$ curl https://raw.github.com/matsko/Git-Concat/master/install.sh | bash
+curl https://raw.github.com/matsko/Git-Concat/master/install.sh | bash
 ```
 
 ### Upgrading
