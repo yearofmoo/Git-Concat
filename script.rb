@@ -46,10 +46,10 @@ def find_files(search)
 end
 
 doc = open_yaml_file(file)
-if doc.nil? || doc.keys.length == 0
+if doc.nil? || doc == false || doc.keys.length == 0
   file += '.yml'
   doc = open_yaml_file(file)
-  if doc.nil? || doc.keys.length == 0
+  if doc.nil? || doc == false || doc.keys.length == 0
     puts "Git-Concat: Concat file has not been set yet..."
     exit
   end
