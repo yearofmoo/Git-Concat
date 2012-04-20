@@ -28,7 +28,7 @@ mv ./$FILE ./.git/hooks/pre-commit
 rm -fr $DIR
 
 if [ ! -f $FINAL ]; then
-  echo "Git-Concat: Unable to movie pre-commit file to $DIR."
+  echo "Git-Concat: Unable to movie pre-commit file to $FINAL."
   exit 0
 fi
 
