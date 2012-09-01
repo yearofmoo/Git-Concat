@@ -15,7 +15,7 @@ if [ -f $FINAL ]; then
   exit 0
 fi
 
-git clone git://github.com/matsko/Git-Concat.git $DIR
+git clone git://github.com/yearofmoo/Git-Concat.git $DIR
 
 if [ ! -f $FILE ]; then
   echo "Git-Concat: Git pull operation failed."
