@@ -4,12 +4,13 @@ Git-Concat is a simple ruby script that allows you specify a series of files tha
 
 This tool is very useful for simple javascript tools that require a master file to be always generated and up to date.
 
-A full explanation of the plugin can be found at http://yearofmoo.com/Git-Concat.
+A full explanation of the plugin can be found at http://yearofmoo.com/code/git-concat.html
+.
 
 ## Requirements
 
 - Git
-- Ruby (**Rubygems + YAML + MD5 Digest**)
+- Ruby (with **Rubygems**, **YAML**, and **MD5 Digest**)
 
 ## Usage
 
